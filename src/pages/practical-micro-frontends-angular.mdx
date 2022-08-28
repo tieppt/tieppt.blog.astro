@@ -1,0 +1,182 @@
+---
+
+layout: ../layouts/Layout.astro
+title: "Practical Micro Frontends Angular"
+description: 'Cùng nhau thử nghiệm cách dựng layout với CSS Grid Area'
+date: 2021-07-21T21:18:23+07:00
+lastmod: 2021-07-21T21:18:23+07:00
+draft: false
+weight: 50
+images: ["/assets/micro-fe-app.jpg"]
+contributors: [Tiep Phan]
+author: Tiep Phan
+url: /practical-micro-frontends/
+toc: true
+categories:
+  - Web Development
+
+tags:
+  - CSS
+  - CSS Grid
+
+series:
+  - 100 Days of Angular
+---
+import Youtube from '../components/Youtube/Youtube';
+
+> Good frontend development is hard. Scaling frontend development so that many teams can work simultaneously on a large and complex product is even harder.
+
+> source: [https://martinfowler.com/articles/micro-frontends.html](https://martinfowler.com/articles/micro-frontends.html)
+
+## Micro Frontends là gì?
+
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+
+
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+
+
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+
+
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+
+
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+
+
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+
+
+Từ hình mô tả trên chúng ta có thể thấy rằng, ứng dụng email client của chúng ta sẽ có thể được phát triển bởi 2 team cho 2 chức năng là mailbox và calendar. Trong đó, team calendar có thể phát triển thêm một widget để có thể nhúng vào page của mailbox. Việc tạo ra các widget có thể được thực hiện thông qua Custom Elements.
+
+Shell or Host app
+Để các micro app có thể chạy trên cùng một app, chúng ta cần có một shell (có thể được gọi là host). Shell sẽ setup một số thứ như routing, shared state, ... Việc tạo ra shell app có thể ảnh hưởng đến công nghệ cần áp dụng cho các micro app.
+
+Ví dụ: nếu chúng ta lựa chọn Angular hay React làm shell app, thì các micro app sẽ phải có tầng wrapper để có thể chạy được các app đó. Vì routing của các framework trên là specific cho từng framework. Nên để route được, và render đúng component thì phải tuân thủ theo ràng buộc của framework đó.
+
+
+<Youtube id="iCNEQJykL4s" />

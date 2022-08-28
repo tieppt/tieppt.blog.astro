@@ -1,0 +1,25 @@
+---
+import { SEO } from "astro-seo";
+import '../styles/global.scss';
+import { AppConfig } from '../config';
+
+export interface Props {
+  title: string;
+  frontmatter?: Record<string, any>;
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEO title={frontmatter?.title || AppConfig.title }  description={frontmatter?.description || AppConfig.description} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
