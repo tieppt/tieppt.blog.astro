@@ -1,49 +1,21 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Avatar from "../components/Avatar/Avatar";
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Avatar from '../components/Avatar/Avatar';
 
 const posts = await Astro.glob('./**.mdx');
 const featurePost = posts[0];
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout>
   <main>
     <h1 class="flex">Welcome to <span class="text-gradient">Astro</span></h1>
-    <p class="instructions">
-      Check out the <code>src/pages</code> directory to get started.<br />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
-    <ul role="list" class="link-card-grid">
+
       <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
+        href={featurePost.url || ''}
+        title={featurePost.frontmatter.title}
+        body={featurePost.frontmatter.description}
       />
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="Chat"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-    </ul>
-    <Avatar url="https://astro.build/themes/">
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-    </Avatar>
-    <Avatar url={featurePost.url || ''}>dd</Avatar>
   </main>
 </Layout>
 

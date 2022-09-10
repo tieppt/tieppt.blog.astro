@@ -1,4 +1,5 @@
-import { h } from "preact";
+import { h } from 'preact';
+import Styles from './Youtube.module.scss';
 interface Props {
   className?: string;
   id: string;
@@ -6,14 +7,11 @@ interface Props {
   loading?: 'lazy' | 'eager';
 }
 
-export default function Youtube({ className, title, id, loading = 'lazy' }: Props) {
+export function Youtube({ className, title, id, loading = 'lazy' }: Props) {
   return (
-    <div
-      className={className}
-      style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"
-    >
+    <div className={className ?? Styles['youtube-embed-16-9']}>
       <iframe
-        src={`https://www.youtube.com/embed/${id}` }
+        src={`https://www.youtube.com/embed/${id}`}
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;"
         allowFullScreen
         title={title}

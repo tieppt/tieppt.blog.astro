@@ -1,0 +1,17 @@
+---
+import type { Props } from '../props';
+
+const props = Astro.props as Required<Props>['extend'];
+---
+
+{props!.link?.map((attributes) => <link {...(attributes as any)} />)}
+{
+  props!.meta?.map(({ content, httpEquiv, name, property }) => (
+    <meta
+      name={name}
+      content={content}
+      http-eqiv={httpEquiv}
+      property={property}
+    />
+  ))
+}

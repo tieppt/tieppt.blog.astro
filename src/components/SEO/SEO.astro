@@ -1,0 +1,65 @@
+---
+import OpenGraphArticleTags from './components/OpenGraphArticleTags.astro';
+import OpenGraphBasicTags from './components/OpenGraphBasicTags.astro';
+import OpenGraphImageTags from './components/OpenGraphImageTags.astro';
+import OpenGraphOptionalTags from './components/OpenGraphOptionalTags.astro';
+import ExtendedTags from './components/ExtendedTags.astro';
+import TwitterTags from './components/TwitterTags.astro';
+import type { Props } from './props';
+
+const props = Astro.props as Props;
+const { title, description, canonical, noindex, nofollow } = props;
+
+function validateProps(props: Props) {
+  const { openGraph, description } = props;
+
+  if (openGraph) {
+    if (
+      !openGraph.basic ||
+      openGraph.basic.title == null ||
+      openGraph.basic.type == null ||
+      openGraph.basic.image == null
+    ) {
+      throw new Error(
+        'If you pass the openGraph prop, you have to at least define the title, type, and image basic properties!'
+      );
+    }
+  }
+
+  if (title && openGraph?.basic.title) {
+    if (title == openGraph.basic.title) {
+      console.warn(
+        'WARNING(astro-seo): You passed the same value to `title` and `openGraph.optional.title`. This is most likely not what you want. See docs for more.'
+      );
+    }
+  }
+
+  if (openGraph?.basic?.image && !openGraph?.image?.alt) {
+    console.warn(
+      "WARNING(astro-seo): You defined `openGraph.basic.image`, but didn't define `openGraph.image.alt`. This is stongly discouraged.'"
+    );
+  }
+}
+
+validateProps(props);
+---
+
+{title ? <title set:html={title} /> : null}
+
+<link rel="canonical" href={canonical || Astro.url.href} />
+
+{description ? <meta name="description" content={description} /> : null}
+
+<meta
+  name="robots"
+  content={`${noindex ? 'noindex' : 'index'}, ${
+    nofollow ? 'nofollow' : 'follow'
+  }`}
+/>
+
+{props.openGraph && <OpenGraphBasicTags {...props.openGraph} />}
+{props.openGraph?.optional && <OpenGraphOptionalTags {...props.openGraph} />}
+{props.openGraph?.image && <OpenGraphImageTags {...props.openGraph} />}
+{props.openGraph?.article && <OpenGraphArticleTags {...props.openGraph} />}
+{props.twitter && <TwitterTags {...props.twitter} />}
+{props.extend && <ExtendedTags {...props.extend} />}

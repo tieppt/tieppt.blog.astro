@@ -1,5 +1,5 @@
-import { ComponentChildren, h } from "preact";
-import Styles from "./Avatar.module.scss";
+import { ComponentChildren, h } from 'preact';
+import Styles from './Avatar.module.scss';
 interface Props {
   children: ComponentChildren;
   url: string;

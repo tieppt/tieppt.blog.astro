@@ -1,0 +1,10 @@
+---
+import type { Props } from '../props';
+
+const props = Astro.props as Required<Props>['twitter'];
+const { card, site, creator } = props;
+---
+
+{card ? <meta name="twitter:card" content={card} /> : null}
+{site ? <meta name="twitter:site" content={site} /> : null}
+{creator ? <meta name="twitter:creator" content={creator} /> : null}

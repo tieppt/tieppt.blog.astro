@@ -1,0 +1,11 @@
+.site-brand {
+  @apply flex flex-col mx-2;
+}
+
+.site-name {
+  @apply text-lg text-green-600;
+}
+
+.site-name-sub {
+  @apply text-gray-600;
+}

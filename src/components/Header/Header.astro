@@ -1,0 +1,37 @@
+---
+export interface Props {
+  baseURL: string;
+  logo: string;
+  siteName: string;
+  siteNameSub?: string;
+}
+const props = Astro.props;
+---
+
+<header class="flex flex-wrap sticky top-0 bg-white shadow-md py-2 z-50">
+  <nav class="flex flex-wrap container mx-auto px-4">
+    <a href={props.baseURL || '/'} class="inline-flex flex-wrap">
+      <img class="h-12" src={props.logo} alt="site-logo" />
+      <span class="site-brand">
+        <strong class="site-name">{props.siteName}</strong>
+        {
+          props.siteNameSub != null && (
+            <small class="site-name-sub">{props.siteNameSub}</small>
+          )
+        }
+      </span>
+    </a>
+    <span class="mx-auto"></span>
+    <ul class="flex flex-wrap items-center nav">
+      <li class="nav-item px-4 py-1">
+        <a class="nav-link" href="/posts"> Post</a>
+      </li>
+      <li class="nav-item px-4 py-1">
+        <a class="nav-link" href="/series"> Series</a>
+      </li>
+      <li class="nav-item px-4 py-1">
+        <a class="nav-link" href="/contact"> Contact</a>
+      </li>
+    </ul>
+  </nav>
+</header>
