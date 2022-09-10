@@ -67,6 +67,7 @@ const baseURL = import.meta.env.SITE;
 const siteLogo = import.meta.env.SITE_LOGO;
 const siteName = import.meta.env.SITENAME;
 const siteNameSub = import.meta.env.SITENAME_SUB;
+const pageTitle = (frontmatter?.title ? `${frontmatter.title} | ` : '') + AppConfig.title;
 ---
 
 <!DOCTYPE html>
@@ -76,7 +77,7 @@ const siteNameSub = import.meta.env.SITENAME_SUB;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href={siteLogo || '/favicon.svg'} />
     <SEO
-      title={`${frontmatter?.title || '' + ' | '}${AppConfig.title}`}
+      title={pageTitle}
       description={frontmatter?.description || AppConfig.description}
       openGraph={openGraph}
       twitter={twitter}
