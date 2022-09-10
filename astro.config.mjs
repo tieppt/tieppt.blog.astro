@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import tailwind from '@astrojs/tailwind';
-
 import preact from '@astrojs/preact';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeToc from 'rehype-toc';
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,5 +22,15 @@ export default defineConfig({
       wrap: true,
     },
   },
-  integrations: [mdx(), tailwind(), preact()],
+  integrations: [
+    mdx({
+      rehypePlugins: [
+        rehypeSlug,
+        [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+        [rehypeToc, { headings: ['h1', 'h2', 'h3'] }],
+      ],
+    }),
+    tailwind(),
+    preact(),
+  ],
 });

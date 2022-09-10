@@ -1,0 +1,18 @@
+.toc {
+  ul,
+  ol {
+    margin-left: 1.25rem;
+    > li::before {
+      content: '» ';
+      font-size: 1.25rem;
+      --hue: 200;
+      color: HSL(var(--hue) 50% 50%);
+    }
+    ul,
+    ol {
+      > li::before {
+        --hue: 300;
+      }
+    }
+  }
+}

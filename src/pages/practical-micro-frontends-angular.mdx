@@ -52,20 +52,20 @@ Trong những năm trở lại đây, việc áp dụng những concepts từ Mi
 
 ## Phương pháp để áp dụng Micro Frontends
 
-- Iframe
+**- Iframe**
 
 Phương pháp này dễ để áp dụng nhưng có chứa nhiều giới hạn như việc navigation, thực thi các đoạn JavaScript từ Host App, ...
 
-- Proxy like nginx
+**- Proxy like nginx**
 
 Phương pháp này yêu cầu việc phát triển các ứng dụng phải độc lập, ví dụ `<host>/mailbox`, `<host>/calendar` là các app Frontend khác nhau. Phương pháp này có một vấn đề là khi navigate từ app này sang app khác thì bạn sẽ bị reload giống như ứng dụng client-server thông thường.
 
-- Web Components
+**- Web Components**
 
 Đây là một công nghệ không quá mới trong thời gian trở lại đây. Các framework áp dụng hoặc tạo ra Custom Elements khá nhiều. Ví dụ [Angular Elements](https://angular.io/guide/elements), [Stencil](https://stenciljs.com).
 Chúng có ưu điểm là bạn có thể tạo ra được các element và có thể sử dụng như là một thẻ html thông thường ở bất cứ framework nào (Framework Agnostic)
 
-- Orchestrator Frameworks
+**- Orchestrator Frameworks**
 
 Webpack 5 and Module Federation, [piral](https://piral.io), [luigi](https://luigi-project.io/), [single-spa](https://single-spa.js.org/)
 
