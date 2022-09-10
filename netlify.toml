@@ -5,4 +5,3 @@ command = "npm install && npm run build"
 [context.production.environment]
 NODE_VERSION = "16.17.0"
 NPM_VERSION = "8.15.0"
-NODE_ENV = "production"
