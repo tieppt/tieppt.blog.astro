@@ -1,8 +1,8 @@
 interface ImportMetaEnv {
   readonly SITE: string;
   readonly SITE_LOGO: string;
-  readonly SITE_NAME: string;
-  readonly SITE_NAME_SUB: string;
+  readonly SITENAME: string;
+  readonly SITENAME_SUB: string;
   // more env variables...
 }
 
