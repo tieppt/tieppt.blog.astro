@@ -13,6 +13,7 @@
     "importsNotUsedAsValues": "error",
     "lib": ["DOM", "ES2021"],
     "types": ["astro/client", "astro/astro-jsx"],
+    "skipLibCheck": true,
     "jsx": "react",
     "jsxFactory": "h"
   }
