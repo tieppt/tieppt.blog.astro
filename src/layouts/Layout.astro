@@ -8,6 +8,7 @@ import type {
 import '../styles/global.scss';
 import { AppConfig } from '../config';
 import Header from '../components/Header/Header.astro';
+import { joinURL } from '../libs/url/url';
 
 export interface Props {
   frontmatter?: Record<string, any>;
@@ -19,7 +20,7 @@ const siteLogo = import.meta.env.SITE_LOGO;
 const siteName = import.meta.env.SITENAME;
 const siteNameSub = import.meta.env.SITENAME_SUB;
 const pageTitle = (frontmatter?.title ? `${frontmatter.title} | ` : '') + AppConfig.title;
-const seoImg = frontmatter?.image || siteLogo;
+const seoImg = joinURL(baseURL, frontmatter?.image || siteLogo);
 const seoDesc = frontmatter?.description || AppConfig.description;
 const seoTitle = frontmatter?.title || AppConfig.title;
 const openGraph: OpenGraphMeta = {
