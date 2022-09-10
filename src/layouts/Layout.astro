@@ -14,7 +14,12 @@ export interface Props {
 }
 
 const { frontmatter } = Astro.props;
-const seoImg = frontmatter?.title || AppConfig.title;
+const baseURL = import.meta.env.SITE;
+const siteLogo = import.meta.env.SITE_LOGO;
+const siteName = import.meta.env.SITENAME;
+const siteNameSub = import.meta.env.SITENAME_SUB;
+const pageTitle = (frontmatter?.title ? `${frontmatter.title} | ` : '') + AppConfig.title;
+const seoImg = frontmatter?.image || siteLogo;
 const seoDesc = frontmatter?.description || AppConfig.description;
 const seoTitle = frontmatter?.title || AppConfig.title;
 const openGraph: OpenGraphMeta = {
@@ -63,11 +68,7 @@ const extend: ExtendMetadata = {
     },
   ],
 };
-const baseURL = import.meta.env.SITE;
-const siteLogo = import.meta.env.SITE_LOGO;
-const siteName = import.meta.env.SITENAME;
-const siteNameSub = import.meta.env.SITENAME_SUB;
-const pageTitle = (frontmatter?.title ? `${frontmatter.title} | ` : '') + AppConfig.title;
+
 ---
 
 <!DOCTYPE html>
