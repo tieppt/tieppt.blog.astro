@@ -4,8 +4,13 @@ const { frontmatter } = Astro.props as Props;
 ---
 
 <Layout {...Astro.props}>
-  <section class="py-6 px-4">
+  <article class="py-6 px-4">
     <h1 class="post-title">{frontmatter?.title}</h1>
+    <p class="post-meta">
+      Published at {frontmatter?.date} by: {frontmatter?.author} - <strong
+        >{frontmatter?.minutesRead}
+      </strong>
+    </p>
     <slot />
-  </section>
+  </article>
 </Layout>

@@ -7,6 +7,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeToc from 'rehype-toc';
 import emoji from 'remark-emoji';
 import sitemap from '@astrojs/sitemap';
+import { remarkReadingTime } from './scripts/remark-reading-time.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,7 +27,7 @@ export default defineConfig({
   },
   integrations: [
     mdx({
-      remarkPlugins: [emoji],
+      remarkPlugins: [emoji, remarkReadingTime],
       rehypePlugins: [
         rehypeSlug,
         [
