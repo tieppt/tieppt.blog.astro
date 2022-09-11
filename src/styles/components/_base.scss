@@ -82,6 +82,16 @@ p {
   max-height: 70vh;
 }
 
+.icon-link {
+  background-image: url('/images/icon-link.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1.125rem;
+  height: 1.125rem;
+  display: inline-flex;
+  margin-left: 0.25rem;
+}
+
 @keyframes move_left {
   0% {
     transform: translateX(-50%);
