@@ -5,7 +5,7 @@ import preact from '@astrojs/preact';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeToc from 'rehype-toc';
-
+import emoji from 'remark-emoji';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -26,6 +26,7 @@ export default defineConfig({
   },
   integrations: [
     mdx({
+      remarkPlugins: [emoji],
       rehypePlugins: [
         rehypeSlug,
         [
