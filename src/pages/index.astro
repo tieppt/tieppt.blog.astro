@@ -7,15 +7,17 @@ const featurePost = posts[0];
 ---
 
 <Layout>
-  <main>
-    <h1 class="flex">Welcome to <span class="text-gradient">Astro</span></h1>
+  <div class="home-page">
+    <h1 class="flex">
+      Welcome to &nbsp;<span class="text-gradient">Astro</span>
+    </h1>
 
     <Card
       href={featurePost.url || ''}
       title={featurePost.frontmatter.title}
       body={featurePost.frontmatter.description}
     />
-  </main>
+  </div>
 </Layout>
 
 <style>
@@ -27,7 +29,7 @@ const featurePost = posts[0];
     margin: 2rem 0;
   }
 
-  main {
+  .home-page {
     margin: auto;
     padding: 1em;
     max-width: 60ch;

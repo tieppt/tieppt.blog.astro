@@ -9,6 +9,7 @@ import '../styles/global.scss';
 import { AppConfig } from '../config';
 import Header from '../components/Header/Header.astro';
 import { joinURL } from '../libs/url/url';
+import Footer from '../components/Footer.astro';
 
 export interface Props {
   frontmatter?: Record<string, any>;
@@ -89,6 +90,12 @@ const extend: ExtendMetadata = {
       siteName={siteName}
       siteNameSub={siteNameSub}
     />
-    <slot />
+    <main
+      class="main-content"
+      role={frontmatter?.type === 'article' ? 'article' : 'document'}
+    >
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

@@ -74,6 +74,10 @@ p {
   @apply mb-2;
 }
 
+.main-content {
+  flex: 1;
+}
+
 .h-spacer {
   @apply w-full my-4;
 }
