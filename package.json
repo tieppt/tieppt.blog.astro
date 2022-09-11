@@ -5,14 +5,15 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && tsc --noEmit && astro build",
+    "build": "astro check && tsc --noEmit && astro build && cp dist/sitemap-index.xml dist/sitemap.xml",
     "preview": "astro preview",
     "format": "prettier --write .",
     "astro": "astro"
   },
-  "devDependencies": {
+  "dependencies": {
     "@astrojs/mdx": "^0.11.1",
     "@astrojs/preact": "^1.1.0",
+    "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0",
     "astro": "^1.2.1",
     "preact": "^10.10.6",

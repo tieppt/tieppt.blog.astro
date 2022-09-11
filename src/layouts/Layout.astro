@@ -15,7 +15,7 @@ export interface Props {
 }
 
 const { frontmatter } = Astro.props;
-const baseURL = import.meta.env.SITE || AppConfig.origin;
+const baseURL = AppConfig.origin;
 const siteLogo = import.meta.env.SITE_LOGO || AppConfig.image;
 const siteName = import.meta.env.SITENAME || AppConfig.siteName;
 const siteNameSub = import.meta.env.SITENAME_SUB || AppConfig.siteNameSub;
@@ -68,7 +68,7 @@ const extend: ExtendMetadata = {
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
