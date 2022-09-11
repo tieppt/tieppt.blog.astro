@@ -10,11 +10,11 @@ const featurePost = posts[0];
   <main>
     <h1 class="flex">Welcome to <span class="text-gradient">Astro</span></h1>
 
-      <Card
-        href={featurePost.url || ''}
-        title={featurePost.frontmatter.title}
-        body={featurePost.frontmatter.description}
-      />
+    <Card
+      href={featurePost.url || ''}
+      title={featurePost.frontmatter.title}
+      body={featurePost.frontmatter.description}
+    />
   </main>
 </Layout>
 

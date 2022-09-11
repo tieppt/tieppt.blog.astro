@@ -2,9 +2,17 @@
 import type { Props } from '../props';
 
 const props = Astro.props as Required<Props>['twitter'];
-const { card, site, creator } = props;
+const { card, site, creator, title, description, url, imageSrc, imageAlt } =
+  props;
 ---
 
-{card ? <meta name="twitter:card" content={card} /> : null}
+<!--Twitter Card Metadata-->{
+  card ? <meta name="twitter:card" content={card} /> : null
+}
 {site ? <meta name="twitter:site" content={site} /> : null}
 {creator ? <meta name="twitter:creator" content={creator} /> : null}
+{title ? <meta name="twitter:title" content={title} /> : null}
+{description ? <meta name="twitter:description" content={description} /> : null}
+{url ? <meta name="twitter:url" content={url} /> : null}
+{imageSrc ? <meta name="twitter:image:src" content={imageSrc} /> : null}
+{imageAlt ? <meta name="twitter:image:alt" content={imageAlt} /> : null}

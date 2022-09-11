@@ -44,6 +44,11 @@ export interface TwitterMeta {
   card?: string;
   site?: string;
   creator?: string;
+  url?: string;
+  description?: string;
+  imageSrc?: string;
+  title?: string;
+  imageAlt?: string;
 }
 
 export interface ExtendMetadata {

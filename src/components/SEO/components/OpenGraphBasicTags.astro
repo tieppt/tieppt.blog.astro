@@ -4,6 +4,7 @@ import type { Props } from '../props';
 const props = Astro.props as Required<Props>['openGraph'];
 ---
 
+<!--Open Graph Metadata-->
 <meta property="og:title" content={props.basic.title} />
 <meta property="og:type" content={props.basic.type} />
 <meta property="og:image" content={props.basic.image} />
