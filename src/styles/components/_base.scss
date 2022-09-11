@@ -78,6 +78,10 @@ p {
   @apply w-full my-4;
 }
 
+.image-404 {
+  max-height: 70vh;
+}
+
 @keyframes move_left {
   0% {
     transform: translateX(-50%);
