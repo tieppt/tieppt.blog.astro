@@ -3,6 +3,8 @@ import { format } from '../libs/date/format';
 import Layout, { Props } from './Layout.astro';
 const { frontmatter } = Astro.props as Props;
 const publishedTime = format(frontmatter?.date);
+let lastModify = format(frontmatter?.lastmod);
+lastModify = publishedTime !== lastModify ? lastModify : '';
 ---
 
 <Layout {...Astro.props}>
@@ -10,9 +12,16 @@ const publishedTime = format(frontmatter?.date);
     <h1 class="post-title">{frontmatter?.title}</h1>
     <div class="post-meta">
       <address class="post-author">
-        By {frontmatter?.author}
+        By {frontmatter?.author},
       </address>
       on <time datetime={publishedTime}>{publishedTime}</time>
+      {
+        lastModify ? (
+          <>
+            ~ updated on <time datetime={lastModify}>{lastModify}</time>
+          </>
+        ) : null
+      }
       -
       <strong>{frontmatter?.minutesRead}</strong>
     </div>
